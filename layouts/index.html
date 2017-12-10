@@ -1,9 +1,3 @@
 {{ partial "header.html" . }}
-{{ range $index, $page := (.Paginate (where (where .Data.Pages "Type" "posts") ".Params.hidden" "!=" "true" )).Pages }}
-{{ if ne $index 0 }}
-{{ end }}
-{{ .Render "li" }}
-{{ end }}
-{{ partial "pagination.html" .Paginator }}
-{{ partial "siteinfo.html" . }}
-{{ partial "footer.html" . }}
+
+<center><a style="text-align:center;margin:0 auto;font-size:150%" href="/about">About Me</a></center>{{ range $index, $page := (.Paginate (where (where .Data.Pages "Type" "posts") ".Params.hidden" "!=" "true" )).Pages }} {{ if ne $index 0 }} {{ end }} {{ .Render "li" }} {{ end }} {{ partial "pagination.html" .Paginator }} {{ partial "siteinfo.html" . }} {{ partial "footer.html" . }}
